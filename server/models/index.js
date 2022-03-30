@@ -1,3 +1,3 @@
 const productHomedeck = require('./productHomedeck');
-
-module.exports = { productHomedeck };
+const orderedProducts = require('./orderedProducts');
+module.exports = { productHomedeck, orderedProducts };

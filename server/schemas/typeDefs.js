@@ -11,10 +11,18 @@ type productHomedeck {
     availability: String
     volume: Int
   }
+  type orderedProducts {
+    _id: ID
+    orderDate: String
+    datePeriods: String
+    productHomedeck:[productHomedeck]
+
+  }
 
   type Query {
     productHomedeck: [productHomedeck]
-    
+    orderedProducts:[orderedProducts]
+        
   }
  
 `;
