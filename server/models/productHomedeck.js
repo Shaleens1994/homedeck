@@ -16,7 +16,7 @@ const productHomedeckSchema = new Schema({
       trim: true
   },
   
-    productdeatils: {
+    productdetails: {
       type: String,
       required: true,
       unique: true,
