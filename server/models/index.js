@@ -1,3 +1,3 @@
-const Profile = require('./Profile');
+const Profile = require('./productHomedeck');
 
 module.exports = { Profile };

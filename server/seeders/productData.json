@@ -1,0 +1,84 @@
+[
+    {
+      "itemcategory": "Furniture",
+      "productitem": "Bench",
+      "productdeatils": "Bench with seating capacity of 3",
+      "image": "bench.jpeg",
+      "rentamount": 10,
+      "availability": "Yes",
+      "volume": 25
+    },
+    {
+        "itemcategory": "Furniture",
+        "productitem": "Chair",
+        "productdeatils": "Single occupancy Chairs",
+        "image": "chair.jpeg",
+        "rentamount": 5,
+        "availability": "Yes",
+        "volume": 200
+      },
+      {
+        "itemcategory": "Furniture",
+        "productitem": "Round Table",
+        "productdeatils": "Round Table for Open Air wedding Receptions",
+        "image": "roundtable.jpeg",
+        "rentamount": 20,
+        "availability": "Yes",
+        "volume": 20
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Lawn Mowers Ride on",
+        "productdeatils": "Ride-On Mowers for large areas ",
+        "image": "rideonmower.jpeg",
+        "rentamount": 85,
+        "availability": "Yes",
+        "volume": 5
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Lawn Mowers walk on",
+        "productdeatils": "Walk Mowers  for small lawn areas ",
+        "image": "walkonmower.jpeg",
+        "rentamount": 50,
+        "availability": "Yes",
+        "volume": 5
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Gas Snow Blowers",
+        "productdeatils": "Gas Snow Blowers for snow removals",
+        "image": "gassnow.jpeg",
+        "rentamount": 30,
+        "availability": "Yes",
+        "volume": 3
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Cordless Snow Blowers",
+        "productdeatils": "Cordless Snow Blowers for snow removals",
+        "image": "cordlesssnow.jpeg",
+        "rentamount": 45,
+        "availability": "Yes",
+        "volume": 2
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Engine Oil Changer Machine",
+        "productdeatils": "Engine Oil Changer Machine for garage oil change",
+        "image": "engineoilchanger.jpeg",
+        "rentamount": 30,
+        "availability": "Yes",
+        "volume": 2
+      },
+      {
+        "itemcategory": "Equipments",
+        "productitem": "Electrical Tool Kit",
+        "productdeatils": "Electrical tool kit for home repairs",
+        "image": "electricalrepairkit.jpeg",
+        "rentamount": 10,
+        "availability": "Yes",
+        "volume": 30
+      }
+     
+]
