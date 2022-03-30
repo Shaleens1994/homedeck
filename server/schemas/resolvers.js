@@ -1,13 +1,13 @@
-const { Profile } = require('../models');
+const { productHomedeck } = require('../models');
 
 const resolvers = {
-  Query: {
+  Query: { productHomedeck: async () => {
+    return await productHomedeck.find({});
+  }
    
-  },
+  }
 
-  Mutation: {
-    
-  },
+ 
 };
 
 module.exports = resolvers;
