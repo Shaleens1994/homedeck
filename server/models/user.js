@@ -26,7 +26,7 @@ const userSchema = new Schema({
       type: String,
       trim: true
     },
-    orderedProducts: [orderedProducts.schema]
+    orders: [Order.schema]
   });
   userSchema.pre('save', async function(next) {
     if (this.isNew || this.isModified('password')) {
