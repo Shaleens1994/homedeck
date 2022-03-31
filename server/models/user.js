@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const orderedProducts = require('./orderedProducts');
+const Order = require('./Order');
 const bcrypt = require('bcrypt');
 const userSchema = new Schema({
     firstName: {
@@ -25,6 +25,10 @@ const userSchema = new Schema({
     phoneNumber: {
       type: String,
       trim: true
+    },
+    mailList: {
+      type: Boolean,
+      default: false
     },
     orders: [Order.schema]
   });
