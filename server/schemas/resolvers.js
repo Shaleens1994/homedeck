@@ -112,14 +112,14 @@ const resolvers = {
         );
       }
         // If user attempts to execute this mutation and isn't logged in, throw an error
-        throw new AuthenticationError('You need to be logged in!');
+        throw new AuthenticationError('THE USER NEEDS TO LOGIN AND ITS REQUIRED!!!!!!!!!!');
       },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError('YOU ARE NOT LOGGED IN PLEASE LOG IN TO CONTINUE');
     },
     updateProduct: async (parent, { _id, volume }) => {
       const decrement = Math.abs(volume) * -1;
@@ -139,15 +139,15 @@ const resolvers = {
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
+// if the user is not logged in error is thrown indicating login needed and need input
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('WRONG INFORMATION!!!!!!!!!!!!');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('WRONG INFORMATION!!!!!!!!!!!!');
       }
 
       const token = signToken(user);
