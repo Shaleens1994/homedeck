@@ -35,6 +35,7 @@ type Product {
     phoneNumber: String
     mailList: Boolean
     orders: [Order]
+    products: Product
   }
 
 
@@ -51,6 +52,7 @@ type Product {
     updateUser(firstName: String, lastName: String, email: String, password: String, phoneNumber: String, mailList: Boolean): User
     updateProduct(_id: ID, volume: Int!): Product
     login(email: String!, password: String!): Auth
+    additemforsale(UserId: ID!, itemcategory: String!, productitem: String!, productdetails: String!, image: String!, rentamount: Float!, availability: String!, volume: Int!, reserveDays: Int!): Product
   }
  
 `;
