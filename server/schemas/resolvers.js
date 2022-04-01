@@ -12,27 +12,28 @@ const resolvers = {
       const url = new URL(context.headers.referer).origin;
 
       for (let i = 0; i < products.length; i++) {
-        // generate product id
+        // product id is generated and the images and price of the product to chekout is added 
+        // to the stripe checkout page
         const product = await stripe.products.create({
           name: products[i].productitem,
           productdetails: products[i].productdetails,
           images: [`${url}/images/${products[i].image}`]
         });
 
-        // generate price id using the product id
+        // Price is generated using the id of the product fr the final chekout in stripe
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: 'usd',
         });
 
-        // add price id to the line items array
+        // Price is added to the ine item array
         line_items.push({
           price: price.id,
           quantity: 1
         });
       }
-
+// wait for teh checkout to return to success page to show the payment was made and the items were reserved successfuly
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
@@ -94,6 +95,25 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+// add item for sale mutations to add more products from the user end to sell item
+// the user can only add items if the user is logged in
+    additemforsale: async (parent, {userId, itemforsale }, context) => {
+      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+      if (context.user) {
+        return Product.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { itemforsales: itemforsale },
+          },
+          {
+            new: true,
+            runValidators: false,
+          }
+        );
+      }
+        // If user attempts to execute this mutation and isn't logged in, throw an error
+        throw new AuthenticationError('You need to be logged in!');
+      },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
@@ -106,6 +126,17 @@ const resolvers = {
 
       return await Product.findByIdAndUpdate(_id, { $inc: { volume: decrement } }, { new: true });
     },
+
+    // addimageurl: async (parent, { _id, volume }) => {
+    //    const options = {
+    //        //     body: imageBody,
+    //     $addToSet: { addimageurl: addimageurl },
+    //     },
+    //   };
+    // },
+
+
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
