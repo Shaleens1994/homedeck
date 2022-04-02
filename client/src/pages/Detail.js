@@ -13,6 +13,31 @@ import { idbPromise } from "../utils/helpers";
 
 function Detail() {
 
+    const [state, dispatch] = useStoreContext();
+  const { id } = useParams();
+
+  const [currentProduct, setCurrentProduct] = useState({
+});
+
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  const { products } = state;
+
+  useEffect(() => {
+    if (products.length) {
+      setCurrentProduct(products.find((product) => product._id === id));
+    }else if(data){
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.products
+      });
+      data.products.forEach((product) =>{
+        idbPromise('products', 'put', product);
+      });
+    }
+  }, [products, data, loading, dispatch,  id]);
+
+
 }
 
 export default Detail;
