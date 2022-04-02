@@ -1,7 +1,7 @@
 import React from 'react';
 import Equipmentlist from '../components/Equipmentlist';
 
-
+// to display the equipment lists
 function Equipments(){
 
     return (
