@@ -10,6 +10,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_PRODUCTS
 } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
+// to provide details about the products avvailable
 
 function Detail() {
 
@@ -36,6 +37,16 @@ function Detail() {
       });
     }
   }, [products, data, loading, dispatch,  id]);
+  return (
+    <>
+      {currentProduct ? (
+        <div className='detailedpic'>
+          <ProductItemDetail />
+        </div>
+      ) : null}
+      {loading ? <img src={spinner} alt="loading" /> : null}
+    </>
+  );
 
 
 }
