@@ -1,5 +1,6 @@
 import React from "react";
 import construction from '../assets/construction.gif';
+// this page to show the error when no match is found
 const NoMatch = () => {
   return (
     <div>
