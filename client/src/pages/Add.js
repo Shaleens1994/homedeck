@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import { ADD_ITEMS_FOR_SALE } from '../utils/mutations';
-
+// This page is to add items to the cart
+// You can reserve days here
 function Add() {
 
     const [addItem] = useMutation(ADD_ITEMS_FOR_SALE);
