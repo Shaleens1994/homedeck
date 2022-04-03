@@ -29,6 +29,7 @@ const Cart = () => {
     function toggleCart(){
       dispatch({ type: TOGGLE_CART});
     }
+    // TOTAL NUMBER OF ITEMS DISPLAYED IN THE CART WHICH POP UPS WHEN THE USER MAKES RESERVATION
   
     function calculateItemNum() {
       let itemNum = 0;
