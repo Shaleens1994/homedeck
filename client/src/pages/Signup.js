@@ -85,6 +85,37 @@ function Signup(props) {
             size="50"
           />
         </div>
+        <div className="  my-2">
+          <label htmlFor="pwd">PASSWORD </label> <br />
+          <input
+          className="main-search-input-field"
+          size="50"
+            placeholder="******"
+            name="password"
+            type="password"
+            id="pwd"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="  my-2">
+          <label htmlFor="phoneNumber">ADD PHONE NUMBER </label> <br />
+          <input
+          className="main-search-input-field"
+            placeholder="000-000-0000"
+            name="phoneNumber"
+            type="phoneNumber"
+            id="phoneNumber"
+            onChange={handleChange}
+            size="50"
+          />
+        </div>
+        <div className="flex-row flex-end">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  );
 
 }
 
