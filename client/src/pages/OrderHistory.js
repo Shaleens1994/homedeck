@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
+// page to see previous orders for the customer
+
 function OrderHistory() {
     const { data } = useQuery(QUERY_USER);
     let user;
@@ -24,9 +26,9 @@ function OrderHistory() {
                 Order History for {user.firstName} {user.lastName}
               </h2>
               {user.orders.map((order) => (
-                <div key={order._id} className="my-2">
+                <div key={order._id} className="my-2"> 
                   <h3>
-                    Date: {new Date(parseInt(order.orderDate)).toLocaleDateString()}
+                    Date: {new Date(parseInt(order.orderDate)).toLocaleDateString()}   
                   </h3>
                   <h4>
                     DATES CHOOSED:
