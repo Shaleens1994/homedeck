@@ -43,7 +43,7 @@ function Equipmentlist() {
       } 
       return equipments
     }
-  
+  // add equipments to the cart
     console.log(products())
     return (
       <div className="m-2">
