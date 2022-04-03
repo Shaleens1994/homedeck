@@ -6,6 +6,7 @@ class AuthService {
   }
 
   loggedIn() {
+      //TO CHECK FOR THE SVAED TOKENS
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token);
   }
@@ -33,6 +34,7 @@ class AuthService {
   }
 
   logout() {
+      // FOR DELETING THE THE DATA FROM LOCAL
     localStorage.removeItem('id_token');
     window.location.assign('/');
   }
