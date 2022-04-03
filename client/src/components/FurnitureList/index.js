@@ -38,6 +38,40 @@ function FurnitureList() {
       });
     }
   }, [data, loading, dispatch]);
+  function products() {
+    let furniture = [];
+    for (let i=0; state.products.length > i; i++){
+      if(state.products[i].itemcategory === "Furniture"){
+        furniture.push(state.products[i])
+      }
+    } 
+    return furniture
+  }
+
+  console.log(products())
+  return (
+    <div className="m-2">
+      {state.products.length ? (
+        <div className=" displaycardlist">
+          {products().map((product) =>
+            (
+              <ProductCard
+                key={product._id}
+                _id={product._id}
+                image={product.image}
+                productitem={product.productitem}
+                rentamount={product.rentamount}
+                reserveDays={product.rentamount}
+                productdetails={product.productdetails}
+              />
+          ))}
+        </div>
+      ) : (
+        <h3>PLEASE ADD ITEMS TO CONTINUE</h3>
+      )}
+      {loading ? <img src={spinner} alt="loading" /> : null}
+    </div>
+  );
 
 
 
