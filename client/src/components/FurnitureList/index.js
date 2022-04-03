@@ -47,14 +47,20 @@ function FurnitureList() {
     } 
     return furniture
   }
+// products displayed on furniture list are logegd to see teh actual list
 
+
+
+// product card disply of furnitures on list page
   console.log(products())
   return (
     <div className="m-2">
+
+  
       {state.products.length ? (
         <div className=" displaycardlist">
           {products().map((product) =>
-            (
+            (          
               <ProductCard
                 key={product._id}
                 _id={product._id}
