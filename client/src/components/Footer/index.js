@@ -5,7 +5,7 @@ function Footer() {
         <footer className="px-4">
           <div className="flex-column container footerWrapper">
             <div className="flex-row space-between footer-row footer-row-top">
-              
+            
               <div>
                 <form className="flex-column">
                     <label htmlFor="mailing-list">
@@ -13,6 +13,7 @@ function Footer() {
                     CONTACT US
                     </h6>
                   </label>
+                {/* adding mailing list */}
                   <div>
                      <form style={{ width: '60rem',  border: '7px solid black'}}>      
                     <input type="text" id="mailing-list" name="mailing-list" placeholder="Email address" style={{ width: '59rem'}}/>   
