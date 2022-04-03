@@ -5,10 +5,81 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 function Nav() {
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    const body = document.getElementById("body");
+    setMenuOpen(!menuOpen); 
+
+    body.classList.toggle("fixed-body"); 
+  }
+
+
+  function showNavLinks() {
+    return (
+   
+      <ul className={`${menuOpen ? "flex-column" : "flex-row"}`}>
+        <li className="mx-3">
+          <NavLink exact to="/" activeClassName="active" >
+            Home
+          </NavLink>
+        </li>
+        <li className="mx-3">
+          <NavLink to="/furnitures" activeClassName="active" >
+            Furnitures
+          </NavLink>
+        </li>
+        <li className="mx-3">
+          <NavLink to="/equipments" activeClassName="active" >
+            Equipments
+          </NavLink>
+        </li>
+        <li className="mx-3">
+          <NavLink to="/about" activeClassName="active" >
+            About
+          </NavLink>
+        </li>
+        
+        <li className="mx-4">
+          <NavLink to="/howitworks" activeClassName="active" >
+            How It Works
+          </NavLink>
+          </li>
+          <li className="mx-4">
+          <NavLink to="/add" activeClassName="active" >
+            Add Items
+          </NavLink>
+        </li>
+      </ul>
+    )
+  }
+
+
+  
+ 
+  const NavBar = ({ menuOpen, setMenuOpen }) => {
+    return (
+      <nav className="flex-row px-2 hidden">
+         <button style={{backgroundColor:"transparent", position:"absolute", top:"0", zIndex:"999"}} type="button" aria-label="Toggle mobile menu" onClick={toggleMenu} className="hidden-mobile"><NavHamburger menuOpen={menuOpen} /></button>
+        
+        <div className="flex-row space-between display-none">
+            {showNavLinks()}
+          <div className="flex-row nav-auth-links">
+            {showNavAuth()}
+          </div>
+        </div>
+      </nav>
+    )
+  }
 
 
 
-
+  return (
+    <header>
+     <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    
+    </header>
+  );
 }
 
 export default Nav;
