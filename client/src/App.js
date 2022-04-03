@@ -67,7 +67,6 @@ function App() {
               <Route exact path="/furnitures" component={Furnitures} />
               <Route exact path="/equipments" component={Equipments} />
               <Route exact path="/about" component={About} />
-              
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/Products/:id" component={Detail} />
