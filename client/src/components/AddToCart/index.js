@@ -19,10 +19,11 @@ function AddToCart(input) {
 
     const { id } = useParams();
     const { loading } = useQuery(QUERY_PRODUCTS);
+     // TO FIND PRODUCTS WITH THE SAME ID
     const addToCart = () => {
         
         const itemInCart = cart.find((cartItem)=> cartItem._id === id);
-
+   // TO UPDATE THE QUANTITY NUMBER WHEN THERE IS A MATCH
         if(itemInCart){
           dispatch({
             type: UPDATE_CART_DAYS,
