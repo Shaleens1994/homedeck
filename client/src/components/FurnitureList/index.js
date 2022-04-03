@@ -24,6 +24,21 @@ function FurnitureList() {
       });
 
 
+      data.products.forEach((product)=> {
+        idbPromise('products', "put", product);
+      });
+    }else if (!loading){
+     
+      idbPromise('products', 'get').then((products) => {
+      
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: products
+        });
+      });
+    }
+  }, [data, loading, dispatch]);
+
 
 
     }
