@@ -11,9 +11,64 @@ import { idbPromise } from "../../utils/helpers";
 
 function Equipmentlist() {
 
+    const [state, dispatch] = useStoreContext();
+    const {loading, data} = useQuery(QUERY_PRODUCTS);
+  
+    useEffect(() => {
+      if(data){
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: data.products
+        });
+  
+        data.products.forEach((product)=> {
+          idbPromise('products', "put", product);
+        });
+      }else if (!loading){
+        idbPromise('products', 'get').then((products) => {
+          dispatch({
+            type: UPDATE_PRODUCTS,
+            products: products
+          });
+        });
+      }
+    }, [data, loading, dispatch]);
+  
+    function products() {
+      let equipments = [];
+      for (let i=0; state.products.length > i; i++){
+        if(state.products[i].itemcategory === "Equipments"){
+          equipments.push(state.products[i])
+        }
+      } 
+      return equipments
+    }
+  
+    console.log(products())
+    return (
+      <div className="m-2">
+        {state.products.length ? (
+          <div className=" displaycardlist">
+            {products().map((product) =>
+              (
+                <ProductCard
+                  key={product._id}
+                  _id={product._id}
+                  image={product.image}
+                  productitem={product.productitem}
+                  rentamount={product.rentamount}
+                  reserveDays={product.reserveDays}
+                  productdetails={product.productdetails}
+                />
+            ))}
+          </div>
+        ) : (
+          <h3>PLEASE ADD EQUIPMENTS TO THE CART!</h3>
+        )}
+        {loading ? <img src={spinner} alt="loading" /> : null}
+      </div>
+    );
 
-
-    
 }
 
 export default Equipmentlist;
