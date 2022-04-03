@@ -55,7 +55,52 @@ function Nav() {
   }
 
 
+  function showNavAuth() {
+    if (Auth.loggedIn()) {
+      return (
+        <ul className={`${menuOpen ? "flex-column" : "flex-row"}`}>
+          <li className="mx-3">
+            <NavLink to="/orderHistory" activeClassName="active" >
+              Order History
+            </NavLink>
+          </li>
+          <li className="mx-3">
+    
+            <a href="/" onClick={
+              function () {
+                toggleMenu();
+                Auth.logout()
+              } 
+              }>
+              Logout
+            </a>
+          </li>
+        </ul>
+      );
+    } else {
+      return (
+        <ul className={`${menuOpen ? "flex-column" : "flex-row"}`}>
+          <li className="mx-3">
+            <Link to="/signup" >
+              Signup
+            </Link>
+          </li>
+          <li className="mx-3">
+            <Link to="/login" >
+              Login
+            </Link>
+          </li>
+        </ul>
+      );
+    }
+  }
+
   
+  
+  const NavHamburger = ({ menuOpen }) => (
+   <AiOutlineMenu className="nav-hamburger" style={{fill:"#ffffff"}} size={26}/>
+  );
+
  
   const NavBar = ({ menuOpen, setMenuOpen }) => {
     return (
