@@ -13,6 +13,16 @@ function FurnitureList() {
 
 
 
+    const [state, dispatch] = useStoreContext();
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  useEffect(() => {
+    if(data){
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.products
+      });
+
 
 
 
