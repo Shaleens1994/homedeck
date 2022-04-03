@@ -13,7 +13,7 @@ function Footer() {
                     CONTACT US
                     </h6>
                   </label>
-                {/* adding mailing list */}
+                {/* ADDED CONTACT US SECTION */}
                   <div>
                      <form style={{ width: '60rem',  border: '7px solid black'}}>      
                     <input type="text" id="mailing-list" name="mailing-list" placeholder="Email address" style={{ width: '59rem'}}/>   
