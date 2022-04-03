@@ -1,6 +1,6 @@
 import React from "react";
-
-function howitworks() {
+// describe the services provided
+function Howitworks() {
 
   return (
     <>
@@ -21,16 +21,13 @@ function howitworks() {
             <p>
               We have almost all major equipments and furnitures!</p>
           </div>
-        </div>
-       
-       
-
-        
+        </div>   
       
       </div>
     </div>
     </>
-  );
+        
+    );
 }
 
-export default howitworks;
+export default Howitworks;
