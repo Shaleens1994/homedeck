@@ -79,3 +79,4 @@ function ProductItemDetail(item) {
 
 }
 
+export default ProductItemDetail;
