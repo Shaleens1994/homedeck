@@ -20,3 +20,9 @@ This is a Full Stack Application of a household item rental service with full ac
 
 Type "npm install" in the console to install the required dependancies.
 
+## Usage
+
+Click the heroku link to go to the deployed application and see its functionality
+
+
+
