@@ -71,3 +71,4 @@ function AddToCart(input) {
 
 }
 
+export default AddToCart;
