@@ -16,3 +16,7 @@ This is a Full Stack Application of a household item rental service with full ac
 4. [License](#license)
 5. [Questions](#questions)
 
+## Installation
+
+Type "npm install" in the console to install the required dependancies.
+
