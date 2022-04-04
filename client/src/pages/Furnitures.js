@@ -18,3 +18,4 @@ function Furniture(){
 
 }
 
+export default Furniture;
