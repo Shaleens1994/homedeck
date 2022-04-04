@@ -9,3 +9,5 @@ import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+const stripePromise = loadStripe('');
+
