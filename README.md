@@ -40,3 +40,9 @@ Click the heroku link to go to the deployed application and see its functionalit
 
 ![calendar](./assets/calendar.png)
 
+## License
+
+This project is not under any license.
+
+
+
