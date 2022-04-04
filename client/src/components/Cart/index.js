@@ -8,8 +8,11 @@ import { idbPromise } from "../../utils/helpers";
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import "bootstrap-icons/font/bootstrap-icons.css";
+require('dotenv').config()
 
-const stripePromise = loadStripe('');
+
+
+const stripePromise = loadStripe('process.env.SECRET_SK');
 
 const Cart = () => {
   const [state, dispatch]= useStoreContext();
