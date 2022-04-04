@@ -2,6 +2,14 @@
 
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
+## User Story
+
+```
+AS A household rental user, 
+I WANT to see the cheap and best one-time use items from different categories,
+SO THAT I can see choose the best item for me according to my liking
+I  ALSO WANT to checkout and rent the items with ease
+```
 ## Description
 
 This is a Full Stack Application of a household item rental service with full access to users upon authentication. Users have the ability to rent household items from different categories like furniture, equipments and tools, etc.
