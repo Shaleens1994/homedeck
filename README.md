@@ -53,4 +53,11 @@ Click the heroku link to go to the deployed application and see its functionalit
 This project is not under any license.
 
 
+## Features
+1.	E commerce website to rent household items like lawn mowers, toolkits and other home items like furniture.
+2.	User can rent it for days based on needs.	
+3.	User needs to sign in to get into rental page
+4.	Each item has a per day amount which needs to be paid and he can get the item on required time.
+
+
 
