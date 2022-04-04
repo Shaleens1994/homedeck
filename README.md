@@ -22,7 +22,8 @@ This is a Full Stack Application of a household item rental service with full ac
 2. [Usage](#usage)
 3. [Screenshots](#Screenshots)
 4. [License](#license)
-5. [Questions](#questions)
+5. [Tech-Stack](#tech-stack)
+6. [Features](#features)
 
 ## Installation
 
@@ -53,6 +54,7 @@ Click the heroku link to go to the deployed application and see its functionalit
 This project is not under any license.
 
 ## Tech Stack
+```
 •	Node.js
 •	Express.js
 •	MongodB
@@ -62,8 +64,10 @@ This project is not under any license.
 •	RESTful API 
 •	Stripejs
 •	nodemon
+```
+
 ## Features
-1.	E commerce website to rent household items like lawn mowers, toolkits and other home items like furniture.
+1.	E-commerce website to rent household items like lawn mowers, toolkits and other home items like furniture.
 2.	User can rent it for days based on needs.	
 3.	User needs to sign in to get into rental page
 4.	Each item has a per day amount which needs to be paid and he can get the item on required time.
