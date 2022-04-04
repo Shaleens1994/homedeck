@@ -11,3 +11,63 @@ import {
   ADD_TO_CART,
 } from "../../utils/actions";
 
+function AddToCart(input) {
+
+  const {
+      currentProduct
+  } = input
+
+  const { id } = useParams();
+  const { loading } = useQuery(QUERY_PRODUCTS);
+   // TO FIND PRODUCTS WITH THE SAME ID
+  const addToCart = () => {
+      
+      const itemInCart = cart.find((cartItem)=> cartItem._id === id);
+ // TO UPDATE THE QUANTITY NUMBER WHEN THERE IS A MATCH
+      if(itemInCart){
+        dispatch({
+          type: UPDATE_CART_DAYS,
+          _id: id,
+          reserveDays: parseInt(itemInCart.reserveDays) + 1
+        });
+      }else{
+        dispatch({
+          type: ADD_TO_CART,
+          product: { ...currentProduct, reserveDays: 1 }
+        });
+      }
+    };
+
+  const [state, dispatch] = useStoreContext();
+
+  const { cart } = state;
+
+  const removeFromCart = () => {
+      dispatch({
+        type: REMOVE_FROM_CART,
+        _id: currentProduct._id
+      });
+    };
+  return(
+      <div>
+      <p>
+          <button className="my-3" onClick={addToCart}>BOOK YOUR DATES</button>
+          <br />
+          <button className="my-3"
+              disabled={!cart.find(p => p._id === currentProduct._id)}
+              onClick={removeFromCart}
+          >
+           DELETE
+    </button>
+    </p>
+
+    {loading ? <img src={spinner} alt="loading" /> : null}
+            <Cart/>
+  </div>
+
+  )
+
+
+
+}
+
